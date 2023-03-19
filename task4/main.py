@@ -89,7 +89,11 @@ def hilbert(n):
     """
     возвращает матницу Гильберта размерности n
     """
-    return np.array([[1 / (i + j + 1) for j in range(n)] for i in range(n)])
+    A = np.zeros((n, n))
+    for i in range(n):
+	    for j in range(n):
+		    A[i][j] = 1/(i + j + 1)
+    return A
 
 
 if __name__ == "__main__":
